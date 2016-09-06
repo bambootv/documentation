@@ -1,0 +1,2 @@
+Composer update: Loại trừ library liên quan chỉ chạy trên linux: composer update --ignore-platform-reqs
+Git Hubtoken:     62be7e17ff709816201319cd0fab84e200eccf8b

@@ -1,0 +1,16 @@
+﻿// redirect uri: http://localhost/moodle/auth?code=xxadfasdfa&sid=d68s7uyfjasdf
+
+curl -> tokenUrl
+
+trả về một json chứa accesstoken và refresh-token
+
+verify accesstoken và refresh-token: dùng library google, publickey của server auth được lấy tại địa chỉ jwks url
+
+Nếu thành công:
+Lưu thông tin accesstoken và refresh-token (dự là cache, thứ 2 là lưu vào db)
+
+curl -> userinfo url
+
+trả về file json chứa thông tin user (email, ...: được định nghĩa bằng scope)
+
+lưu thông tin user vào db của moodle
