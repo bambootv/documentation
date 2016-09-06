@@ -8,3 +8,9 @@ docker rmi -f $(docker images -f "dangling=true" -q)
 ```
 docker rm $(docker ps -a -q)
 ```
+
+**View struc container**
+```
+docker exec -it ID bash
+```
+
