@@ -24,3 +24,7 @@ end
 If you see this error: `There was an error when attempting to rsync a synced folder.`, you should install vb-guest plugin via:
 
 `vagrant plugin install vagrant-vbguest`
+
+
+Shutdown machine:
+    `sudo shutdown -h now`
