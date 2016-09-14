@@ -29,3 +29,10 @@ Example: `runtime/`, `web/assets/`
 `chmod -R 774 runtime/ web/assets`
 
 
+Yii2 database
+=============
+
+1. Update database.
+
+`yii migrate`
+`php yiic.php migrate`
