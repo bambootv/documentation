@@ -1,4 +1,4 @@
-2. **Linux**
+1. **Linux**
 ```
 composer update --ignore-platform-reqs
 ```
