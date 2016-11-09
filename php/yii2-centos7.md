@@ -35,4 +35,12 @@ Yii2 database
 1. Update database.
 
 `yii migrate`
-`php yiic.php migrate`
+`php yiic.php migrate
+
+Yii1 database
+=============
+
+1. Update database.
+
+`yiic migrate`
+
