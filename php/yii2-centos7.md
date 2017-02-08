@@ -34,8 +34,9 @@ Yii2 database
 
 1. Update database.
 
-`yii migrate`
-`php yiic.php migrate
+Local host: `yii migrate`
+<br/>
+Hosting: `php yiic.php migrate`
 
 Yii1 database
 =============
