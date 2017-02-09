@@ -41,7 +41,7 @@ Hosting: `php yiic.php migrate`
 Yii1 database
 =============
 
-1. Update database.
+2. Create repo
 
-`yiic migrate`
+`composer create-project --prefer-dist yiisoft/yii2-app-basic <ten_du_an>`
 
