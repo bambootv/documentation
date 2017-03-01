@@ -1,4 +1,5 @@
-1. **Nhieu gia tri i, hoi i da ton tai hay chua**
+**1. Nhieu gia tri i, hoi i da ton tai hay chua**
+
 ``
 if(t[i] == 0){
     t[i] = 1;
@@ -6,7 +7,8 @@ if(t[i] == 0){
 }
 ``
 
-2. **Null**
+**2. Null**
+
 ``
 '\0'
 ``
