@@ -21,6 +21,7 @@ Access windows system -> power option -> turn on fast startup -> restart compute
 ```
 
 5. **Install PhpStorm**
+
 `cd PhpStorm-143.1184.87/bin/`
 
 `./phpstorm.sh`
