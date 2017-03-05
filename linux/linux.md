@@ -19,3 +19,8 @@ ibus restart
 ```
 Access windows system -> power option -> turn on fast startup -> restart computer.
 ```
+
+5. **Install PhpStorm**
+`cd PhpStorm-143.1184.87/bin/`
+
+`./phpstorm.sh`
