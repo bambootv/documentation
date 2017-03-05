@@ -11,9 +11,6 @@ rm -rf *[^demo]*
 3. **Install VietNamese**
 ```
 sudo apt-get install ibus-unikey
-```
 
-
-```
 ibus restart
 ```
