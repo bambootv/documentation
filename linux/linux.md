@@ -14,3 +14,8 @@ sudo apt-get install ibus-unikey
 
 ibus restart
 ```
+
+4. **Can't mount partion**
+```
+Access windows system -> power option -> turn on fast startup -> restart computer.
+```
