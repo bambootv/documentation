@@ -44,3 +44,7 @@ if error
 `git config --global credential.helper 'cache --timeout=3600'`
 
 
+4. Show graph
+
+`git log --graph --oneline`
+
