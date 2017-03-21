@@ -21,7 +21,6 @@ if error
 `sudo apt install git`
 
 
-
 2. Delete n last commit
 
 `git reset HEAD~n`
@@ -38,13 +37,33 @@ if error
 
 4. Remember password
 
-
-`git config --global credential.helper cache`
-
-`git config --global credential.helper 'cache --timeout=3600'`
+`use SSH Key`
 
 
-4. Show graph
+5. Show graph
 
-`git log --graph --oneline`
+Graph: `git log --graph --oneline`
+
+Online: `git log --online`
+
+6. Gộp n commit thành 1 commit
+
+`git rebase -i HEAD~n`
+
+Thay những chữ `pick` cuối cùng bằng `f` 
+
+7. Delete branch
+
+Local:
+`git branch -d <branch_name>`
+
+Remote:
+`git push origin --delete <branch_name>`
+
+8. Khôi phục bằng reflog 
+
+Xem lịch sử `git reflog`
+ 
+Quay lại sau khi "nhỡ tay": `git reset --hard HEAD~ <id of commit>`
+
 

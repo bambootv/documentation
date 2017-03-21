@@ -1,3 +1,13 @@
+0. **Short cut**
+   
+   a. **Terminal**
+   
+   `Ctrl + Alt + T`
+   
+   b. **Show desktop**
+   
+   `Ctrl + (Super)Windows + D`
+
 1. **Remove all file in directory**
 ```
 rm -rf *
@@ -17,7 +27,7 @@ ibus restart
 
 4. **Can't mount partion**
 ```
-Access windows system -> power option -> turn on fast startup -> restart computer.
+Access windows system -> power option -> turn off fast startup -> restart computer.
 ```
 
 5. **Install PhpStorm**
@@ -25,3 +35,7 @@ Access windows system -> power option -> turn on fast startup -> restart compute
 `cd PhpStorm-143.1184.87/bin/`
 
 `./phpstorm.sh`
+
+6. **Update grub **
+
+`sudo update-grub`
