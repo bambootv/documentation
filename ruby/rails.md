@@ -1,7 +1,7 @@
 1. Empty Blank
 
 `>> "".blank?
-=> true
+=> true 
 
 >> "      ".empty?
 => false
