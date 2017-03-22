@@ -1,9 +1,9 @@
 1. Empty Blank
 
 `>> "".blank?
-=> true`
+=> true
 
-`>> "      ".empty?
+>> "      ".empty?
 => false
 
 >> "      ".blank?
@@ -15,6 +15,61 @@
 2. Controller
 
 `rails generate controller Say home help about`
+
+`rails generate model User name:string email:string`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 3. Demo class
 
