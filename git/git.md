@@ -236,3 +236,6 @@ Khi bạn chỉnh sửa các tập tin, Git coi là chúng đã bị thay đổi
 
 	Nhánh từ xa (remote) là các tham chiếu tới trạng thái của các nhánh trên kho chứa trung tâm của bạn.	
 	(remote)/(branch): Nhánh từ xa (remote) là các tham chiếu tới trạng thái của các nhánh trên kho chứa trung tâm của bạn.
+	
+15.	Reset about commit
+	git reset --hard 4a155e5
