@@ -239,3 +239,6 @@ Khi bạn chỉnh sửa các tập tin, Git coi là chúng đã bị thay đổi
 	
 15.	Reset about commit
 	git reset --hard 4a155e5
+
+16.	Rm
+	git rm -f <file_name>
