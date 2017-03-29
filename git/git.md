@@ -242,3 +242,6 @@ Khi bạn chỉnh sửa các tập tin, Git coi là chúng đã bị thay đổi
 
 16.	Rm
 	git rm -f <file_name>
+17. Commit vào commit cuối cùng
+	` git commit --amend `
+	Không chỉnh sửa:  ` git commit --amend --no-edit`
