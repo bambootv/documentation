@@ -1,4 +1,4 @@
-`<% for attribute in current_user.attributes.keys %>
+<% for attribute in current_user.attributes.keys %>
   <p><%= attribute.humanize %> <%= @user.attributes[attribute].to_s %></p>
 <% end %>
 
@@ -11,4 +11,4 @@
   <h1>True</h1>
 <% else %>
   <h1>Faild</h1>
-<% end %>`
+<% end %>
