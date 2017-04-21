@@ -44,7 +44,7 @@ if error
 
 Graph: `git log --graph --oneline`
 
-Online: `git log --online`
+Online: `git log --oneline`
 
 6. Gộp n commit thành 1 commit
 
@@ -64,7 +64,7 @@ Remote:
 
 Xem lịch sử `git reflog`
  
-Quay lại sau khi "nhỡ tay": `git reset --hard HEAD~ <id of commit>`
+Quay lại sau khi "nhỡ tay": `git reset HEAD~ <id of commit>`
 
 
 Mỗi tập tin trong thư mục làm việc của bạn có thể ở một trong hai trạng thái 
@@ -81,14 +81,14 @@ Tập tin untracked là các tập tin còn lại - bất kỳ tập tin nào tr
 
 Ban đầu, khi bạn tạo bản sao của một kho chứa, tất cả tập tin ở trạng thái "đã được theo dõi" (tracked) và "chưa thay đổi" (unmodified) vì bạn vừa mới tải chúng về và chưa thực hiện bất kỳ thay đổi nào.
 
-Khi bạn chỉnh sửa các tập tin, Git coi là chúng đã bị thay đổi so với lần commit trước đó. Bạn stage các tập tin bị thay đổi này và sau đó commit tất cả các thay đổi đã được staged (tổ chức) đó, và quá trình này cứ thế lặp đi lặp lại như được miêu tả trong Hình 2-1.
+Khi bạn chỉnh sửa các tập tin, Git coi là chúng đã bị thay đổi so với lần commit trước đó. Bạn stage các tập tin bị thay đổi này và sau đó commit tất cả các thay đổi đã được staged (tổ chức) đó, và quá trình này cứ thế lặp đi lặp lại.
 
 
 0. Tham số
 	-f: fouce: Đè lên
 
 1.Log:
-	git log --graph --oneline: Hiển thị nhật kí trên 1 dòng
+	git log --oneline: Hiển thị nhật kí trên 1 dòng
 	git reflog: Nhật kí thao tác
 	gitk: View trực quan.
 
@@ -98,7 +98,7 @@ Khi bạn chỉnh sửa các tập tin, Git coi là chúng đã bị thay đổi
 
 
 3.Add 
-	git add README:	Theo Dõi Các Tập Tin Mới
+	git add <file_name>:	Theo Dõi Các Tập Tin Mới
 	
 
 4.ignore
@@ -141,7 +141,6 @@ Khi bạn chỉnh sửa các tập tin, Git coi là chúng đã bị thay đổi
 	3. git remote show [tên máy chủ trung tâm]
 
 	4. git remote rename [oldName] [newName]
-
 
 
 9. fetch
@@ -223,8 +222,7 @@ Khi bạn chỉnh sửa các tập tin, Git coi là chúng đã bị thay đổi
 	Merge bằng rebase:
 	git checkout issue3
 	git rebase master
-
-	Đứng ở master, rebase other branch
+	git rebase develop
 
 14. Diff
 	Sự khác biệt
@@ -238,10 +236,14 @@ Khi bạn chỉnh sửa các tập tin, Git coi là chúng đã bị thay đổi
 	(remote)/(branch): Nhánh từ xa (remote) là các tham chiếu tới trạng thái của các nhánh trên kho chứa trung tâm của bạn.
 	
 15.	Reset about commit
-	git reset --hard 4a155e5
+	git reset 4a155e5
 
 16.	Rm
 	git rm -f <file_name>
+	
 17. Commit vào commit cuối cùng
 	` git commit --amend `
 	Không chỉnh sửa:  ` git commit --amend --no-edit`
+	
+18. Sửa nội dung commit
+	` git commit --amend `
