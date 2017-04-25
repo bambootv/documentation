@@ -250,3 +250,6 @@ Khi bạn chỉnh sửa các tập tin, Git coi là chúng đã bị thay đổi
 
 19. Xem commit mới nhất trên từng nhánh
 	`git branch -v`
+
+20. Xóa commit giữ lại code
+`git reset --soft HEAD~1`
