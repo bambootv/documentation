@@ -247,3 +247,6 @@ Khi bạn chỉnh sửa các tập tin, Git coi là chúng đã bị thay đổi
 	
 18. Sửa nội dung commit
 	` git commit --amend `
+
+19. Xem commit mới nhất trên từng nhánh
+	`git branch -v`
