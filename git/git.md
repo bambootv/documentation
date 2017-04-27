@@ -121,9 +121,10 @@ Khi bạn chỉnh sửa các tập tin, Git coi là chúng đã bị thay đổi
 	git diff: Hiển thị thay đổi của những file chưa add.
 	git diff --staged: Hiển thị thay đổi của những file đã add.
 
-6. rm
+6. 
 	git rm filename: Xóa file khỏi stage và xóa khỏi thư mục.
 	git rm --cached filename: Chỉ xóa file khỏi stage
+	rm -rf filename: xóa cả file lẫn thư mục
 
 7. commit
 	git commit --amend
