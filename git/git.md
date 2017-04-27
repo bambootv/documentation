@@ -252,4 +252,8 @@ Khi bạn chỉnh sửa các tập tin, Git coi là chúng đã bị thay đổi
 	`git branch -v`
 
 20. Xóa commit giữ lại code
-`git reset --soft HEAD~1`
+	`git reset --soft HEAD~1`
+
+21. Fllow in framgia
+	`checkout dev -> pull dev -> checkout newbr -> rebase -> git add . -> rebase --c`
+
