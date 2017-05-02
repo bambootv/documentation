@@ -66,6 +66,7 @@ Xem lịch sử `git reflog`
  
 Quay lại sau khi "nhỡ tay": `git reset HEAD~ <id of commit>`
 
+Quay lại sau khi "nhỡ tay": `git reset --hard HEAD~ <id of commit>` (mất code)
 
 Mỗi tập tin trong thư mục làm việc của bạn có thể ở một trong hai trạng thái 
 
@@ -123,7 +124,9 @@ Khi bạn chỉnh sửa các tập tin, Git coi là chúng đã bị thay đổi
 
 6. 
 	git rm filename: Xóa file khỏi stage và xóa khỏi thư mục.
+	
 	git rm --cached filename: Chỉ xóa file khỏi stage
+	
 	rm -rf filename: xóa cả file lẫn thư mục
 
 7. commit
