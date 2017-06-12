@@ -13,6 +13,7 @@
 `bundle install --without production`
 
 **3.Deploy to heroku**
+
 `heroku version`
 
 `heroku login`
@@ -25,4 +26,10 @@
 
 `heroku apps`
 
-` heroku apps:destroy <app-name>`
+`heroku apps:destroy <app-name>`
+
+`heroku buildpacks --app <app-name>`
+
+`heroku buildpacks:set heroku/ruby`
+
+`heroku buildpacks:set heroku/php`
