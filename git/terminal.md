@@ -254,4 +254,8 @@ Quay lại sau khi "nhỡ tay": `git reset --hard <id of commit>` (mất code)
 
 21. Fllow in framgia
 	`checkout dev -> pull dev -> checkout newbr -> rebase -> git add . -> rebase --c`
-
+	
+22. Rename branch
+	`git branch -m old_branch new_branch         # Rename branch locally`
+	`git push origin :old_branch                 # Delete the old branch`
+	`git push --set-upstream origin new_branch`

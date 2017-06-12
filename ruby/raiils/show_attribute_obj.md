@@ -12,3 +12,6 @@
 <% else %>
   <h1>Faild</h1>
 <% end %>
+
+
+Khong trung lap: uniqueness: true
