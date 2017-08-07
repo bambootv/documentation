@@ -42,9 +42,9 @@ if error
 
 **5. Show graph**
 
-Graph: `git log --graph --oneline`
-
 Online: `git log --oneline`
+
+Graph:  `git log --oneline --graph`
 
 **6. Gộp n commit thành 1 commit**
 
