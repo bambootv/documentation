@@ -42,7 +42,7 @@ if error
 
 **5. Show graph**
 
-Online: `git log --oneline`
+Oneline: `git log --oneline`
 
 Graph:  `git log --oneline --graph`
 
