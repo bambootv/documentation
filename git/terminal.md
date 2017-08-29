@@ -34,6 +34,7 @@ if error
 
 `git config --global user.email "youremail@domain.com"`
 
+`git config --global`
 
 **4. Remember password**
 
