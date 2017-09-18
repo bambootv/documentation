@@ -1,2 +1,3 @@
-1. isNaN()
-If not a number, return true.
+1. ```isNaN()```
+
+    If not a number, return true.
