@@ -4,7 +4,7 @@
     Code:
     ```
     if !number || isNaN(number)
-      messages.push(I18n.t("invalid_form_cc_number"))
+      messages.push(I18n.t("invalid_form_number"))
     else
-      messages.push(I18n.t("invalid_form_cc_number_length")) if cc_number.length < 14
+      messages.push(I18n.t("invalid_form_number_length")) if number.length < 14
     ```
