@@ -4,6 +4,8 @@ Linux terminal:
 select version();
 
 mysql --user=root --password=root
+Ex: mysql -u root -proot -e "create database fg"
+mysql -u root -proot fg
 
 show databases;
 
