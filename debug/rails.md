@@ -1,7 +1,0 @@
-``
-binding.pry
-``
-
-``
-byebug
-``
