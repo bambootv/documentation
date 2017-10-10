@@ -39,3 +39,6 @@ Access windows system -> power option -> turn off fast startup -> restart comput
 6. **Update grub **
 
 `sudo update-grub`
+
+7. ** Free space **
+`sudo du -sh *`
