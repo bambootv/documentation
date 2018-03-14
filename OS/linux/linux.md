@@ -36,9 +36,15 @@ Access windows system -> power option -> turn off fast startup -> restart comput
 
 `./phpstorm.sh`
 
-6. **Update grub **
+6. **Update grub**
 
 `sudo update-grub`
 
-7. ** Free space **
+7. ** Free space**
+
 `sudo du -sh *`
+
+8. **Ip v4**
+
+`hoanki@hoanki-HP-EliteBook-8470p:~$ sudo chmod 777  /etc/apt/apt.conf.d
+hoanki@hoanki-HP-EliteBook-8470p:~$ sudo touch "Acquire::ForceIPv4 "true"; " >> /etc/apt/apt.conf.d/99force-ipv4`
