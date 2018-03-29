@@ -8,27 +8,27 @@
 
 1. **Listed images**
 ```
-docker images
+sudo docker images
 ```
 
 2. **Pull image**
 ```
-docker pull Author/Images name
+sudo docker pull Author/Images name
 ```
 
 3. **Remove all image**
 ```
-docker rmi -f $(docker images)
+sudo docker rmi -f $(sudo docker images)
 ```
 
 4. **Remove all none image**
 ```
-docker rmi -f $(docker images -f "dangling=true" -q)
+sudo docker rmi -f $(sudo docker images -f "dangling=true" -q)
 ```
 
 5. **Build image**
 ```
-docker build Author/Images name
+sudo docker build Author/Images name
 ```
 
 **Container**
@@ -40,20 +40,20 @@ docker build Author/Images name
 
 1. **Listed container**
 ```
-docker ps -a -q
+sudo docker ps -a -q
 ```
 
 2. **Run container from images**
 ```
-docker run -v <forder in computer>:<forder in container> -p <port in computer>:<port in container> -it <image name> /bin/bash
+sudo docker run -v <forder in computer>:<forder in container> -p <port in computer>:<port in container> -it <image name> /bin/bash
 ```
 
 3. **Remove all containers**
 ```
-docker rm -f $(docker ps -a -q)
+sudo docker rm -f $(docker ps -a -q)
 ```
 
 4. **Access container**
 ```
-docker exec -it ID bash
+sudo docker exec -it ID bash
 ```
