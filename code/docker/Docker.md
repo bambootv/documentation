@@ -53,7 +53,12 @@ sudo docker run -v <forder in computer>:<forder in container> -p <port in comput
 sudo docker rm -f $(docker ps -a -q)
 ```
 
-4. **Access container**
+4. **Access container runing**
 ```
 sudo docker exec -it ID bash
+```
+
+4. **Start container**
+```
+sudo docker start ID
 ```
