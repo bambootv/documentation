@@ -48,3 +48,16 @@ Access windows system -> power option -> turn off fast startup -> restart comput
 
 `hoanki@hoanki-HP-EliteBook-8470p:~$ sudo chmod 777  /etc/apt/apt.conf.d
 hoanki@hoanki-HP-EliteBook-8470p:~$ sudo touch "Acquire::ForceIPv4 "true"; " >> /etc/apt/apt.conf.d/99force-ipv4`
+
+9. **Error update**
+
+```
+$ sudo -i
+# apt-get clean
+# cd /var/lib/apt
+# mv lists lists.old
+# mkdir -p lists/partial
+# apt-get clean
+# apt-get update
+```
+
