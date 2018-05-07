@@ -2,6 +2,8 @@ Linux terminal:
 
 ```
 select version();
+mysql --version
+sudo apt-get purge mysql-server mysql-client mysql-common mysql-server-core-5.7 mysql-client-core-5.7
 
 mysql --user=root --password=root
 Ex: mysql -u root -proot -e "create database fg"
