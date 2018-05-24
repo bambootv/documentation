@@ -19,6 +19,8 @@ show tables;
 
 show columns from <table_name>;
 
+mysqldump -u root -p sunday > /home/nguyenvanhoan/Desktop/sunday_backup.sql
+
 Rails:
 	rake db:drop
 	rails db:create
