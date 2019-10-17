@@ -1,2 +1,4 @@
 Documentation
 ================================
+
+![alt](/image.jpg)
