@@ -1,3 +1,5 @@
+1. Update multi row
+
 ```SQL
 update public.users as row set
     first_name = data.first_name,
