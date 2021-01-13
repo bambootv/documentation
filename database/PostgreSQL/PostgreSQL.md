@@ -11,3 +11,12 @@ from (values
 ) as data(id, first_name, last_name)
 where data.id = row.id
 ```
+
+2. c
+```SQL
+CREATE EXTENSION IF NOT EXISTS unaccent;
+
+SELECT *
+FROM "campaigns"
+WHERE  unaccent(facebook_name) ILIKE unaccent('Chien dịch moi');
+```
