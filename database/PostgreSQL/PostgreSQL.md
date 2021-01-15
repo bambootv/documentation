@@ -12,11 +12,16 @@ from (values
 where data.id = row.id
 ```
 
-2. c
+2. Search without accent
 ```SQL
 CREATE EXTENSION IF NOT EXISTS unaccent;
 
 SELECT *
 FROM "campaigns"
 WHERE  unaccent(facebook_name) ILIKE unaccent('Chien dịch moi');
+```
+
+3. Truncate table
+```
+truncate ad_accounts RESTART IDENTITY CASCADE
 ```
