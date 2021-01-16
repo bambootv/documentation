@@ -13,6 +13,7 @@ where data.id = row.id
 ```
 
 2. Search without accent
+Note: Need permission
 ```SQL
 CREATE EXTENSION IF NOT EXISTS unaccent;
 
