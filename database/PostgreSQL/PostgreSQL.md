@@ -18,13 +18,15 @@ let updateData = '';
 payload.forEach(el => {
     updateData += `('${el.id}','${JSON.stringify(el.detail)}'::jsonb),`;
 });
-return knex.raw(`
-    update public.ad_accounts as row set
-    detail = data.detail
-    from (values ${updateData.slice(0, -1)})
-    as data(id, detail)
-    where data.id = row.id
-`);
+if(updateData.length > 0){
+    return knex.raw(`
+        update public.ad_accounts as row set
+        detail = data.detail
+        from (values ${updateData.slice(0, -1)})
+        as data(id, detail)
+        where data.id = row.id
+    `);
+}
 ```
 
 2. Search without accent
