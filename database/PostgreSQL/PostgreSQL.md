@@ -60,3 +60,15 @@ WHERE  unaccent(facebook_name) ILIKE unaccent('Chien dịch moi');
 ```
 truncate ad_accounts RESTART IDENTITY CASCADE
 ```
+
+4. Update types enum
+```
+exports.up = (knex) => {
+    return knex.schema.raw(`
+        ALTER TABLE "coupons"
+        DROP CONSTRAINT "coupons_type_check",
+        ADD CONSTRAINT "coupons_type_check"
+        CHECK (type IN ('percentage', 'flat'))
+    `);
+};
+```
