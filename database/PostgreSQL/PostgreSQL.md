@@ -61,7 +61,7 @@ WHERE  unaccent(facebook_name) ILIKE unaccent('Chien dịch moi');
 truncate ad_accounts RESTART IDENTITY CASCADE
 ```
 
-4. Update types enum
+4. Update validate enum
 ```
 exports.up = (knex) => {
     return knex.schema.raw(`
