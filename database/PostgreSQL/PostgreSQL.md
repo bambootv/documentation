@@ -72,3 +72,21 @@ exports.up = (knex) => {
     `);
 };
 ```
+
+5. Joins
+```
+publishable(userId) {
+        return this.leftJoin('drafts', function condition() {
+            this.on('drafts.object_id', '=', 'campaigns.id');
+        })
+            .where(function findbyCamStatus() {
+                this.whereIn('campaigns.sync_status', ['draft', 'publish_failed'])
+                    .orWhere(function findbyDraftStatus() {
+                        this.where('campaigns.sync_status', '=', 'active')
+                            .where('drafts.object_type', '=', 'campaign')
+                            .where('drafts.user_id', '=', userId)
+                            .whereNotIn('drafts.sync_status', ['need_publish', 'publishing', 'need_update', 'updating']);
+                    });
+            });
+    }
+```
