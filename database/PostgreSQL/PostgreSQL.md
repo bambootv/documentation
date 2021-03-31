@@ -90,3 +90,11 @@ publishable(userId) {
             });
     }
 ```
+
+6. Where `unaccent`
+```
+query.where(function name() {
+                        this.where(knex.raw('unaccent(facebook_name)'), 'ilike', knex.raw(`unaccent('%${ctx.params.keyword}%')`))
+                            .orWhere(knex.raw('facebook_campaign_id::TEXT'), 'ilike', `%${ctx.params.keyword}%`);
+                    });
+```
