@@ -80,7 +80,7 @@ publishable(userId) {
             this.on('drafts.object_id', '=', 'campaigns.id');
         })
             .where(function findbyCamStatus() {
-                this.whereIn('campaigns.sync_status', ['draft', 'publish_failed'])
+                this.whereNotIn('campaigns.sync_status', ['need_publish', 'publishing']) // change way to see with notIn
                     .orWhere(function findbyDraftStatus() {
                         this.where('campaigns.sync_status', '=', 'active')
                             .where('drafts.object_type', '=', 'campaign')
