@@ -98,3 +98,8 @@ query.where(function name() {
                             .orWhere(knex.raw('facebook_campaign_id::TEXT'), 'ilike', `%${ctx.params.keyword}%`);
                     });
 ```
+
+7. Check_type
+```
+tale: constraint_column_usage
+```
