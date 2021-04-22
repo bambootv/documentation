@@ -260,3 +260,8 @@ Quay lại sau khi "nhỡ tay": `git reset --hard <id of commit>` (mất code)
 	`git branch -m old_branch new_branch         # Rename branch locally`
 	`git push origin :old_branch                 # Delete the old branch`
 	`git push --set-upstream origin new_branch`
+
+23. Delete without dev
+	```bash
+	git branch | grep -v "dev" | xargs git branch -D
+	```
