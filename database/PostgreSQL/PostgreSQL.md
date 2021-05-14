@@ -91,6 +91,23 @@ publishable(userId) {
     }
 ```
 
+where ở ngoài thì leftjoin b
+
+```
+.leftJoin('drafts', 'drafts.object_id', '=', 'campaigns.id')
+                .where('drafts.object_type', '=', 'campaign')
+                .where('drafts.user_id', '=', ctx.meta.user.id);
+            // .leftJoin('request_details', function complexJoin() {
+            //     this.on(
+            //         'request_details.object_id', '=', 'campaigns.id'
+            //     ).andOn(
+            //         'request_details.object_type', '=', this.knex().raw('?', ['campaign'])
+            //     ).andOn(
+            //         'request_details.status', '=', this.knex().raw('?', ['waiting'])
+            //     );
+            // });
+```
+
 6. Where `unaccent`
 ```
 query.where(function name() {
