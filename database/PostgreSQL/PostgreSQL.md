@@ -121,7 +121,10 @@ query.where(function name() {
 tale: constraint_column_usage
 ```
 
-8. etc
+8. CASE WHEN
 ```
-knex.raw("CASE WHEN units > 0 THEN cost ELSE '0' END AS cost"),
+.select(['ads.*'].concat([
+    'drafts.content as draft',
+    knex.raw('CASE WHEN request_details.id > 0 THEN true ELSE false END AS in_request')
+]));
 ```
