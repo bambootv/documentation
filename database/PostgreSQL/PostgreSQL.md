@@ -120,3 +120,8 @@ query.where(function name() {
 ```
 tale: constraint_column_usage
 ```
+
+8. etc
+```
+knex.raw("CASE WHEN units > 0 THEN cost ELSE '0' END AS cost"),
+```
