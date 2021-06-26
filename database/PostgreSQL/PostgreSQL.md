@@ -46,6 +46,51 @@ if(updateData.length > 0){
 }
 ```
 
+```javascript
+let raw = '';
+data.forEach(el => {
+    raw += `(
+        '${el.last_sync_at || null}',
+        '${el.facebook_name || null}',
+        ${el.facebook_ad_id},
+        '${el.facebook_status || null}',
+        '${JSON.stringify(el.facebook_creative)}',
+        ${el.facebook_bid_amount || null},
+        ${el.facebook_tracking_specs || null}
+    ),`;
+});
+if (raw.length === 0) {
+    return true;
+}
+
+return knex.raw(`
+    UPDATE
+        ads t
+    SET
+        last_sync_at = data.last_sync_at::timestamp,
+        facebook_name = data.facebook_name,
+        facebook_status = data.facebook_status,
+        facebook_creative = data.facebook_creative::jsonb,
+        facebook_bid_amount = data.facebook_bid_amount::bigint,
+        facebook_tracking_specs = data.facebook_tracking_specs::jsonb[]
+    FROM
+        (
+            values ${raw.slice(0, -1)}
+        )
+        data (
+            last_sync_at,
+            facebook_name,
+            facebook_ad_id,
+            facebook_status,
+            facebook_creative,
+            facebook_bid_amount,
+            facebook_tracking_specs
+        )
+    WHERE
+        t.facebook_ad_id = data.facebook_ad_id
+`);
+```
+
 2. Search without accent
 Note: Need permission
 ```SQL
