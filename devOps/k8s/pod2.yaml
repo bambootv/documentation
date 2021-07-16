@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: a-hi-hi
+  labels:
+    app: balance_label
+spec:
+  containers:
+    - image: nginx-mysql
+      name: nginx-container-ahi
+      imagePullPolicy: IfNotPresent # Always / Never
+      ports:
+        - containerPort: 80

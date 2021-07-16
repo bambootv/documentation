@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  selector:
+    matchLabels:
+      app: balance_label
+  replicas: 2
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: balance_label
+    spec:
+      containers:
+        - image: nginx-mysql
+          imagePullPolicy: IfNotPresent # Always / Never
+          name: nginx-container-ahi
+          ports:
+            - containerPort: 80
