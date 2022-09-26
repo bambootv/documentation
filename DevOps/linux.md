@@ -105,6 +105,6 @@ sudo apt-get install google-chrome-stable
 
 8. scp
 ```
-scp -P 2212 public/uploads.zip root@159.223.64.220:
+scp -P 2290 public/uploads.zip root@159.223.64.220:
 scp user@server:/path/to/remotefile.zip /Local/Target/Destination
 ```
