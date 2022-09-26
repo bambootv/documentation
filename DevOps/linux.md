@@ -58,10 +58,20 @@ sudo ufw status numbered
 sudo ufw delete 3
 sudo ufw delete allow 22/tcp
 sudo ufw allow 1234/tcp
-sudo ufw status verbose
+sudo ufw status verbose (list)
 sudo ufw reload
-```
 
+sudo nano /etc/docker/daemon.json
+{
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "2m",
+    "max-file": "3"
+  }
+}
+sudo service docker restart
+sudo systemctl stop docker.socket // If can not restart and restart again
+```
 
 4. nvm
 ```
@@ -81,6 +91,17 @@ sudo apt install docker-ce
 
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
+
+sudo nano /etc/docker/daemon.json
+{
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "2m",
+    "max-file": "3"
+  }
+}
+sudo service docker restart
+sudo systemctl stop docker.socket // If can not restart and restart again
 ```
 
 
