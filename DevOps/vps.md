@@ -49,39 +49,21 @@ sudo ufw default allow outgoing
 
 sudo ufw allow ssh
 ufw allow 'Nginx HTTP'
+sudo ufw allow 1234/tcp
 
 sudo ufw logging on
-sudo ufw status
 
-sudo ufw allow ...
+sudo ufw status
 sudo ufw status numbered
 sudo ufw delete 3
 sudo ufw delete allow 22/tcp
-sudo ufw allow 1234/tcp
+
 sudo ufw status verbose (list)
 sudo ufw reload
-
-sudo nano /etc/docker/daemon.json
-{
-  "log-driver": "json-file",
-  "log-opts": {
-    "max-size": "2m",
-    "max-file": "3"
-  }
-}
-sudo service docker restart
-sudo systemctl stop docker.socket // If can not restart and restart again
-```
-
-4. nvm
-```
-curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-source ~/.bashrc
-nvm install 16.17.1
 ```
 
 
-5. docker
+4. docker
 ```
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -93,6 +75,7 @@ COMPOSE_VERSION=$(curl -s https://api.github.com/repos/docker/compose/releases/l
 sudo curl -L "https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
+mkdir /etc/docker
 sudo nano /etc/docker/daemon.json
 {
   "log-driver": "json-file",
@@ -106,27 +89,13 @@ sudo systemctl stop docker.socket // If can not restart and restart again
 ```
 
 
-6. Visual Studio Code
-```
-sudo apt update && sudo apt upgrade -y
-sudo apt install software-properties-common apt-transport-https wget
-wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-sudo apt install code
-```
-
-
-7. Google Chrome
-```
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
-sudo apt-get update 
-sudo apt-get install google-chrome-stable
-```
-
-
-8. scp
+5. scp
 ```
 scp -P 2290 public/uploads.zip root@159.223.64.220:
 scp user@server:/path/to/remotefile.zip /Local/Target/Destination
+```
+
+6. npm
+```
+apt install npm
 ```
