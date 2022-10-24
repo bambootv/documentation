@@ -99,3 +99,20 @@ scp user@server:/path/to/remotefile.zip /Local/Target/Destination
 ```
 apt install npm
 ```
+
+7. git 
+
+``` 
+Multi ssh for diffrent project
+ssh-keygen -t rsa -b 4096 -C "bamboo@gmail.com"
+/root/.ssh/id_rsa_<app_name>
+cat ~/.ssh/id_rsa_<app_name>.pub 
+
+nano ~/.ssh/config
+Host github.com_<app_name>
+	HostName github.com
+	User git
+	IdentityFile ~/.ssh/id_rsa_<app_name>
+
+git clone git@github.com_<app_name>:xxx/xxx.git
+```
