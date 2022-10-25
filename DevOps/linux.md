@@ -26,14 +26,14 @@ sudo apt-get install ibus-unikey
 ibus restart
 ```
 
-3. nvm
+4. nvm
 ```
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 source ~/.szhrc
 nvm install 16.18.0
 ```
 
-4. Visual Studio Code
+5. Visual Studio Code
 ```
 sudo apt update && sudo apt upgrade -y
 sudo apt install software-properties-common apt-transport-https wget
