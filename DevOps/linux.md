@@ -42,3 +42,12 @@ sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/v
 sudo apt install code
 ```
 
+
+6. alia ssh
+```
+cat ~/.ssh/config 
+Host name
+    HostName abc.abc.abc.abc
+    User root
+    Port 22
+```
