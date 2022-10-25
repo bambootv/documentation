@@ -1,11 +1,39 @@
-1. nvm
+
+1. Google Chrome
 ```
-curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-source ~/.bashrc
-nvm install 16.17.1
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
+sudo apt-get update 
+sudo apt-get install google-chrome-stable
 ```
 
-2. Visual Studio Code
+2. [Zsh](https://viblo.asia/p/cai-oh-my-zsh-powerlevel10k-toi-uu-va-su-dung-phim-tat-cho-terminal-ORNZqowM50n#_4-tim-hieu-zsh-8)
+```
+sudo apt-get install zsh
+chsh -s $(which zsh)
+logout
+
+cd
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions#installation)
+plugins=(git zsh-autosuggestions)
+```
+
+3. Ibus
+```
+sudo apt-get install ibus-unikey
+ibus restart
+```
+
+3. nvm
+```
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+source ~/.szhrc
+nvm install 16.18.0
+```
+
+4. Visual Studio Code
 ```
 sudo apt update && sudo apt upgrade -y
 sudo apt install software-properties-common apt-transport-https wget
@@ -14,11 +42,3 @@ sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/v
 sudo apt install code
 ```
 
-
-3. Google Chrome
-```
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
-sudo apt-get update 
-sudo apt-get install google-chrome-stable
-```
