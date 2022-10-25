@@ -86,6 +86,8 @@ sudo nano /etc/docker/daemon.json
 }
 sudo service docker restart
 sudo systemctl stop docker.socket // If can not restart and restart again
+
+[sudo permission ](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user)
 ```
 
 
