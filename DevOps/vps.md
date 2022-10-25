@@ -9,15 +9,6 @@ netstat -tulpn | grep ssh
 ssh -p 22000 192.168.1.100
 ```
 
-- Alias
-```
-cat ~/.ssh/config 
-Host name
-    HostName abc.abc.abc.abc
-    User root
-    Port 22
-```
-
 
 2. nginx
 ```
