@@ -13,20 +13,20 @@ ssh -p 22000 192.168.1.100
 2. nginx
 ```
 sudo nano /etc/nginx/sites-available/default
-  server {
-      listen 80;
-      server_name abc.com;
+server {
+    listen 80;
+    server_name abc.com;
 
-      location / {
-              proxy_set_header Host $host;
-              proxy_pass http://127.0.0.1:5000;
-              proxy_redirect off;
-      }
-  }
+    location / {
+        proxy_set_header Host $host;
+        proxy_pass http://127.0.0.1:5000;
+        proxy_redirect off;
+    }
+}
 ```
 ```
-  sudo nano /etc/nginx/nginx.conf
-  client_max_body_size 100M;
+sudo nano /etc/nginx/nginx.conf
+client_max_body_size 100M;
 ```
 
 
