@@ -51,3 +51,8 @@ Host name
     User root
     Port 22
 ```
+
+7. zip
+```
+zip -r images.zip images/
+```
