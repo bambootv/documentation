@@ -1,12 +1,42 @@
 1. ssh
 
-- Change port:
+- On local:
 ```
+ls -l ~/.ssh/id*
+mkdir ~/.ssh
+chmod 700 ~/.ssh
+ssh-keygen
+   /home/<username>/.ssh/id_rsa_<server_name>
+ls -l ~/.ssh/
+cat /home/<username>/.ssh/id_rsa_<server_name>.pub
+
+nano ~/.ssh/config
+Host <alias_name>
+    HostName xxx.xxx.xx.xxx
+    User <username>
+    Port xxx
+ssh <alias_name>
+```
+
+
+- On server:
+```
+# Change port:
 nano /etc/ssh/sshd_config
 Port 22000
 systemctl restart sshd
 netstat -tulpn | grep ssh
 ssh -p 22000 192.168.1.100
+
+#Login with key:
+sudo useradd -m -s /usr/bin/zsh <username>
+sudo passwd <username>
+ls -l ~/.ssh/
+mkdir ~/.ssh
+chmod 700 ~/.ssh
+touch authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+nano ~/.ssh/authorized_keys
 ```
 
 
