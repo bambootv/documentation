@@ -32,6 +32,11 @@ ssh -p 123456 192.168.1.100
 PermitRootLogin prohibit-password
 
 
+# Disable login with password for all accout
+PasswordAuthentication no
+nano /etc/ssh/sshd_config.d/50-cloud-init.conf  # It will mix with ssh/sshd_config
+If see PasswordAuthentication yes, set it to no
+
 #Login with key:
 sudo useradd -m -s /usr/bin/zsh <username>
 sudo passwd <username>
