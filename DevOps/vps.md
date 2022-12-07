@@ -86,6 +86,10 @@ sudo ufw delete allow 22/tcp
 
 sudo ufw status verbose (list)
 sudo ufw reload
+
+SSH
+sudo ufw allow 'Nginx Full'
+sudo ufw delete allow 'Nginx HTTP'
 ```
 
 
