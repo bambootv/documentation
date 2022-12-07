@@ -1,4 +1,4 @@
-1. ssh
+1. SSH
 
 - On local:
 ```
@@ -23,10 +23,14 @@ ssh <alias_name>
 ```
 # Change port:
 nano /etc/ssh/sshd_config
-Port 22000
+Port 123456
 systemctl restart sshd
 netstat -tulpn | grep ssh
-ssh -p 22000 192.168.1.100
+ssh -p 123456 192.168.1.100
+
+# Disable login as root with password
+PermitRootLogin prohibit-password
+
 
 #Login with key:
 sudo useradd -m -s /usr/bin/zsh <username>
