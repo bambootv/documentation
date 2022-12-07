@@ -28,10 +28,6 @@ systemctl restart sshd
 netstat -tulpn | grep ssh
 ssh -p 123456 192.168.1.100
 
-# Disable login as root with password
-PermitRootLogin prohibit-password
-
-
 # Disable login with password for all accout
 PasswordAuthentication no
 nano /etc/ssh/sshd_config.d/50-cloud-init.conf  # It will mix with ssh/sshd_config
