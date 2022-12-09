@@ -33,6 +33,9 @@ PasswordAuthentication no
 nano /etc/ssh/sshd_config.d/50-cloud-init.conf  # It will mix with ssh/sshd_config
 If see PasswordAuthentication yes, set it to no
 
+If not working, read more about 
+ChallengeResponseAuthentication no
+
 #Login with key:
 sudo useradd -m -s /usr/bin/zsh <username>
 sudo passwd <username>
