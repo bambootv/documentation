@@ -151,3 +151,23 @@ Host github.com_<app_name>
 
 git clone git@github.com_<app_name>:xxx/xxx.git
 ```
+
+8. SSL
+
+```
+certbot certonly \
+  --dns-cloudflare \
+  --dns-cloudflare-credentials ~/.secrets/certbot/cloudflare.ini \
+  -d abc.com \
+  -d *.abc.com
+
+cat ~/.secrets/certbot/cloudflare.ini
+# Cloudflare API token used by Certbot
+dns_cloudflare_api_token = cewqd2sqxsxs
+
+sudo certbot renew --dry-run
+
+sudo certbot renew --reuse-key --dry-run
+
+ls -la /etc/letsencrypt/live/abc.com
+```
