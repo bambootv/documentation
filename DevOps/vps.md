@@ -66,7 +66,11 @@ server {
 sudo nano /etc/nginx/nginx.conf
 client_max_body_size 100M;
 ```
-
+```
+sudo rm /var/log/nginx/access.log
+sudo service nginx reload
+sudo truncate --size 0 /var/log/nginx/access.log
+```
 
 3. ufw
 ```
