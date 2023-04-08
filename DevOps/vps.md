@@ -62,6 +62,16 @@ server {
     }
 }
 ```
+
+```
+/etc/nginx/nginx.conf
+
+events {
+    worker_connections 20000;
+}
+```
+
+
 ```
 sudo nano /etc/nginx/nginx.conf
 client_max_body_size 100M;
