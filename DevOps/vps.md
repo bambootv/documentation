@@ -186,3 +186,11 @@ sudo certbot renew --reuse-key --dry-run
 
 ls -la /etc/letsencrypt/live/abc.com
 ```
+
+9. Monitoring
+
+```
+iotop: Disk I/O
+htop: CPU / RAM
+???: Bandwidth
+```
