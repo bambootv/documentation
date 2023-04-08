@@ -53,6 +53,7 @@ nano ~/.ssh/authorized_keys
 sudo nano /etc/nginx/sites-available/default
 server {
     listen 80;
+    access_log off; # if don't want get logs
     server_name abc.com;
 
     location / {
