@@ -77,9 +77,9 @@ sudo nano /etc/nginx/nginx.conf
 client_max_body_size 100M;
 ```
 ```
-sudo rm /var/log/nginx/access.log
-sudo service nginx reload
-sudo truncate --size 0 /var/log/nginx/access.log
+sudo rm /var/log/nginx/access.log 
+sudo service nginx reload // after reload nginx, automatic recreate access.log and error.log
+sudo truncate --size 0 /var/log/nginx/access.log // truncate to 0 kb and increase from 0 kb
 ```
 
 3. ufw
