@@ -126,9 +126,9 @@ sudo chmod +x /usr/local/bin/docker-compose
 mkdir /etc/docker
 sudo nano /etc/docker/daemon.json
 {
-  "log-driver": "json-file",
+  "log-driver": "json-file", # none
   "log-opts": {
-    "max-size": "2m",
+    "max-size": "1m",
     "max-file": "3"
   }
 }
