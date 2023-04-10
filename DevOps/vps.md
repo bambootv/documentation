@@ -83,6 +83,39 @@ sudo service nginx reload // after reload nginx, automatic recreate access.log a
 sudo truncate --size 0 /var/log/nginx/access.log // truncate to 0 kb and increase from 0 kb
 ```
 
+```
+Note: Remember config sticky session
+https://github.com/socketio/socket.io/issues/4239#issuecomment-1011912700
+https://socketio.bootcss.com/docs/using-multiple-nodes/#NginX-configuration
+http {
+  	server {
+		listen 3000;
+		server_name io.yourhost.com;
+
+		location / {
+			proxy_set_header X- Forwarded - For $proxy_add_x_forwarded_for;
+			proxy_set_header Host $host;
+
+			proxy_pass http://nodes;
+
+			# enable WebSockets
+			proxy_http_version 1.1;
+			proxy_set_header Upgrade $http_upgrade;
+			proxy_set_header Connection "upgrade";
+		}
+}
+
+	upstream nodes {
+	    # enable sticky session based on IP;
+	    ip_hash;
+
+	    server app01: 3000;
+	    server app02: 3000;
+	    server app03: 3000;
+	}
+}
+```
+
 3. ufw
 ```
 sudo nano /etc/default/ufw
