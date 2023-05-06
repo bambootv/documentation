@@ -23,6 +23,10 @@ nano ~/.zshrc
 plugins=(git zsh-autosuggestions)
 ```
 
+![Screenshot from 2023-05-06 15-57-02](https://user-images.githubusercontent.com/18675907/236614202-4d356ae2-20d8-40b6-865a-a697e0e3e697.png)
+
+
+
 3. Ibus
 ```
 sudo apt-get install ibus-unikey
@@ -44,7 +48,6 @@ wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 sudo apt install code
 ```
-
 
 6. alia ssh
 ```
