@@ -15,8 +15,11 @@ logout
 
 cd
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
 
-[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions#installation)
+ [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions#installation)
+```
+nano ~/.zshrc
 plugins=(git zsh-autosuggestions)
 ```
 
