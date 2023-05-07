@@ -62,3 +62,10 @@ Host name
 ```
 zip -r images.zip images/
 ```
+
+8. Prevent adult conent
+```
+sudo nano /etc/resolv.conf
+nameserver 185.228.168.168
+sudo chattr +i /etc/resolv.conf
+```
