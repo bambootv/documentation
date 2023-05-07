@@ -64,6 +64,8 @@ zip -r images.zip images/
 ```
 
 8. Prevent adult conent
+
+[CleanBrowsing](https://cleanbrowsing.org/help/docs/configure-dns-filtering-on-linux/)
 ```
 sudo nano /etc/resolv.conf
 nameserver 185.228.168.168
