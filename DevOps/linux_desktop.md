@@ -33,14 +33,49 @@ sudo apt-get install ibus-unikey
 ibus restart
 ```
 
-4. nvm
+
+4. docker
+```
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu `lsb_release -cs` test"
+sudo apt update
+sudo apt install docker-ce
+
+COMPOSE_VERSION=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep 'tag_name' | cut -d\" -f4)
+sudo curl -L "https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+mkdir /etc/docker
+sudo nano /etc/docker/daemon.json
+{
+  "log-driver": "json-file", # none
+  "log-opts": {
+    "max-size": "1m",
+    "max-file": "3"
+  }
+}
+sudo service docker restart
+sudo systemctl stop docker.socket // If can not restart and restart again
+```
+
+[Manage Docker as a non-root user](https://docs.docker.com/engine/install/linux-postinstall)
+```
+sudo groupadd docker
+sudo usermod -aG docker $USER
+logout
+newgrp docker
+```
+
+
+5. nvm
 ```
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 source ~/.szhrc
 nvm install 16.18.0
 ```
 
-5. Visual Studio Code
+6. Visual Studio Code
 ```
 sudo apt update && sudo apt upgrade -y
 sudo apt install software-properties-common apt-transport-https wget
@@ -49,7 +84,7 @@ sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/v
 sudo apt install code
 ```
 
-6. alia ssh
+7. alia ssh
 ```
 cat ~/.ssh/config 
 Host name
@@ -58,12 +93,12 @@ Host name
     Port 22
 ```
 
-7. zip
+8. zip
 ```
 zip -r images.zip images/
 ```
 
-8. Prevent adult conent
+9. Prevent adult conent
 
 [CleanBrowsing](https://cleanbrowsing.org/help/docs/configure-dns-filtering-on-linux/)
 ```
