@@ -203,22 +203,49 @@ git clone git@github.com_<app_name>:xxx/xxx.git
 8. SSL
 
 ```
+sudo apt install certbot
+sudo apt install python3-certbot-dns-cloudflare
+
+cat ~/.secrets/certbot/cloudflare.ini
+dns_cloudflare_api_token = cewqd2sqxsxs
+
+sudo chmod 600 ~/.secrets/certbot/cloudflare.ini
+
 certbot certonly \
   --dns-cloudflare \
   --dns-cloudflare-credentials ~/.secrets/certbot/cloudflare.ini \
   -d abc.com \
   -d *.abc.com
 
-cat ~/.secrets/certbot/cloudflare.ini
-# Cloudflare API token used by Certbot
-dns_cloudflare_api_token = cewqd2sqxsxs
+sudo nano /etc/nginx/sites-available/default
+server {
+    listen 80;
+    #access_log off;
+    server_name abc.com;
+
+    listen 443 ssl;
+
+    # RSA certificate
+    ssl_certificate /etc/letsencrypt/live/abc.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/abc.com/privkey.pem;
+
+    location / {
+        proxy_set_header Host $host;
+        proxy_pass http://127.0.0.1:4000;
+        proxy_redirect off;
+    }
+}
 
 sudo certbot renew --dry-run
-
+sudo certbot renew --reuse-key
 sudo certbot renew --reuse-key --dry-run
+
+sudo crontab -e
+0 1,13 * * * sudo certbot renew --reuse-key >> /var/log/letsencrypt/renew.log
 
 ls -la /etc/letsencrypt/live/abc.com
 ```
+
 
 9. Monitoring
 
