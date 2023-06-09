@@ -111,4 +111,6 @@ sudo chattr +i /etc/resolv.conf
 ```
 ip route
 ... 192.168.xxx.xxx 
+# Can use it to DNS (CloudFlare, ...) but is is flexiable
+# Can buy static ip from provider
 ```
