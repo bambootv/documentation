@@ -106,3 +106,9 @@ sudo nano /etc/resolv.conf
 nameserver 185.228.168.168
 sudo chattr +i /etc/resolv.conf
 ```
+
+10. IP
+```
+ip route
+... 192.168.xxx.xxx 
+```
