@@ -241,7 +241,7 @@ sudo certbot renew --reuse-key
 sudo certbot renew --reuse-key --dry-run
 
 sudo crontab -e
-0 1,13 * * * sudo certbot renew --reuse-key >> /var/log/letsencrypt/renew.log
+0 1,13 * * * sudo certbot renew --reuse-key && sudo service nginx reload >> /var/log/letsencrypt/renew.log
 
 ls -la /etc/letsencrypt/live/abc.com
 ```
