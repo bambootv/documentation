@@ -5,6 +5,7 @@
 ```bash
 1. structure only
 PGPASSWORD=<pass> pg_dump -U <user> -h <host> <database_name> >> sqlfile.sql
+pg_dump -h use_your_host -U use_your_username -Fc use_your_dbname > dbdump.sql
 
 2. Structure and data
 PGPASSWORD=<pass> pg_dumpall -U <user> -h <host> --database=<database_name> >> sqlfile.sql
