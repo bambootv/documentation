@@ -117,5 +117,6 @@ ip route
 
 11. Check size
 ```
-sudo du -sh ./*
+tree --du -h
+du -sh ./*
 ```
