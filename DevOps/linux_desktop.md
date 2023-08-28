@@ -114,3 +114,8 @@ ip route
 # Can use it to DNS (CloudFlare, ...) but is is flexiable
 # Can buy static ip from provider
 ```
+
+11. Check size
+```
+sudo du -sh ./*
+```
