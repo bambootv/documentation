@@ -254,3 +254,9 @@ iotop: Disk I/O
 htop: CPU / RAM
 ???: Bandwidth
 ```
+
+10. Redis
+
+```
+echo 1 >/proc/sys/vm/overcommit_memory
+```
