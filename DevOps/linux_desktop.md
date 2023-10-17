@@ -120,3 +120,9 @@ ip route
 tree --du -h
 du -sh ./*
 ```
+
+12. Redis
+```
+redis-cli
+> AUTH YourPasswordHere
+```
