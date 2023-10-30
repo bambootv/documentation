@@ -67,6 +67,7 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 logout
 newgrp docker
+sudo chmod 666 /var/run/docker.sock
 ```
 
 
