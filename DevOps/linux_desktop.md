@@ -76,6 +76,8 @@ sudo chmod 666 /var/run/docker.sock
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 source ~/.szhrc
 nvm install 16.18.0
+nvm use 16.18.0
+nvm alias default 16.18.0
 ```
 
 6. Visual Studio Code
