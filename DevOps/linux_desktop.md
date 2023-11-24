@@ -90,7 +90,12 @@ sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/v
 sudo apt install code
 ```
 
-7. alia ssh
+7. Postman
+```
+sudo snap install postman
+```
+
+8. alia ssh
 ```
 cat ~/.ssh/config 
 Host name
@@ -99,12 +104,12 @@ Host name
     Port 22
 ```
 
-8. zip
+9. zip
 ```
 zip -r images.zip images/
 ```
 
-9. Prevent adult conent
+10. Prevent adult conent
 
 [CleanBrowsing](https://cleanbrowsing.org/help/docs/configure-dns-filtering-on-linux/)
 ```
@@ -113,7 +118,7 @@ nameserver 185.228.168.168
 sudo chattr +i /etc/resolv.conf
 ```
 
-10. IP
+11. IP
 ```
 ip route
 ... 192.168.xxx.xxx 
@@ -121,13 +126,13 @@ ip route
 # Can buy static ip from provider
 ```
 
-11. Check size
+12. Check size
 ```
 tree --du -h
 du -sh ./*
 ```
 
-12. Redis
+13. Redis
 ```
 redis-cli
 > AUTH YourPasswordHere
