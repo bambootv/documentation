@@ -32,6 +32,7 @@ plugins=(git zsh-autosuggestions)
 3. Ibus
 ```
 sudo apt-get install ibus-unikey
+ibus-daemon -d
 ibus restart
 ```
 
