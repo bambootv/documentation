@@ -95,6 +95,15 @@ sudo apt install code
 sudo snap install postman
 ```
 
+8. Adminer
+```
+sudo apt install adminer
+sudo a2enconf adminer
+systemctl reload apache2
+http://localhost/adminer
+sudo nano /etc/adminer/adminer.css
+```
+
 8. alia ssh
 ```
 cat ~/.ssh/config 
