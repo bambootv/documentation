@@ -104,7 +104,13 @@ http://localhost/adminer
 sudo nano /etc/adminer/adminer.css
 ```
 
-8. alia ssh
+9. Mongodb Compass
+```
+wget https://downloads.mongodb.com/compass/mongodb-compass_1.40.4_amd64.deb
+sudo dpkg -i mongodb-compass_1.40.4_amd64.deb
+```
+
+10. alia ssh
 ```
 cat ~/.ssh/config 
 Host name
@@ -113,12 +119,12 @@ Host name
     Port 22
 ```
 
-9. zip
+11. zip
 ```
 zip -r images.zip images/
 ```
 
-10. Prevent adult conent
+12. Prevent adult conent
 
 [CleanBrowsing](https://cleanbrowsing.org/help/docs/configure-dns-filtering-on-linux/)
 ```
@@ -127,7 +133,7 @@ nameserver 185.228.168.168
 sudo chattr +i /etc/resolv.conf
 ```
 
-11. IP
+13. IP
 ```
 ip route
 ... 192.168.xxx.xxx 
@@ -135,13 +141,13 @@ ip route
 # Can buy static ip from provider
 ```
 
-12. Check size
+14. Check size
 ```
 tree --du -h
 du -sh ./*
 ```
 
-13. Redis
+15. Redis
 ```
 redis-cli
 > AUTH YourPasswordHere
