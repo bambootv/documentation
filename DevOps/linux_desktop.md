@@ -152,3 +152,8 @@ du -sh ./*
 redis-cli
 > AUTH YourPasswordHere
 ```
+
+16. Error mounting
+```
+sudo ntfsfix /dev/nvme0n1p7
+```
