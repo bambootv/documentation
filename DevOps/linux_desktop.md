@@ -13,21 +13,17 @@ sudo apt-get install zsh
 chsh -s $(which zsh)
 logout
 
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
 cd
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
+![Screenshot from 2023-05-06 15-57-02](https://user-images.githubusercontent.com/18675907/236614202-4d356ae2-20d8-40b6-865a-a697e0e3e697.png)
 
- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions#installation)
+[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions#installation)
+ 
 ```
 nano ~/.zshrc
 plugins=(git zsh-autosuggestions)
 ```
-
-![Screenshot from 2023-05-06 15-57-02](https://user-images.githubusercontent.com/18675907/236614202-4d356ae2-20d8-40b6-865a-a697e0e3e697.png)
-
-
 
 3. Ibus
 ```
@@ -44,10 +40,6 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu `lsb_release -cs` test"
 sudo apt update
 sudo apt install docker-ce
-
-COMPOSE_VERSION=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep 'tag_name' | cut -d\" -f4)
-sudo curl -L "https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
 
 mkdir /etc/docker
 sudo nano /etc/docker/daemon.json
