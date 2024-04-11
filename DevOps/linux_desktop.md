@@ -16,9 +16,9 @@ logout
 cd
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
-![Screenshot from 2023-05-06 15-57-02](https://user-images.githubusercontent.com/18675907/236614202-4d356ae2-20d8-40b6-865a-a697e0e3e697.png)
+  ![Screenshot from 2023-05-06 15-57-02](https://user-images.githubusercontent.com/18675907/236614202-4d356ae2-20d8-40b6-865a-a697e0e3e697.png)
 
-[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions#installation)
+  [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions#installation)
  
 ```
 nano ~/.zshrc
@@ -41,6 +41,12 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt update
 sudo apt install docker-ce
 
+or shoter
+
+curl -fsSL https://get.docker.com/ | sh
+```
+
+```
 mkdir /etc/docker
 sudo nano /etc/docker/daemon.json
 {
@@ -61,6 +67,11 @@ sudo usermod -aG docker $USER
 logout
 newgrp docker
 sudo chmod 666 /var/run/docker.sock
+reboot
+
+or shorter
+sudo usermod -aG docker $(whoami)
+reboot
 ```
 
 
