@@ -160,3 +160,8 @@ redis-cli
 ```
 sudo ntfsfix /dev/nvme0n1p7
 ```
+
+17. Monitoring
+```
+sudo ss -lptn 'sport = :80'
+```
