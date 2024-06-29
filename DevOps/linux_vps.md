@@ -171,6 +171,7 @@ sudo systemctl stop docker.socket // If can not restart and restart again
 5. scp
 ```
 scp -P 2290 public/uploads.zip root@159.223.64.220:
+scp -i ~/.ssh/id_rsa_server  -P 2290 public/uploads.zip root@159.223.64.220:
 scp user@server:/path/to/remotefile.zip /Local/Target/Destination
 ```
 
