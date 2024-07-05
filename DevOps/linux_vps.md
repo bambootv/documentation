@@ -130,7 +130,8 @@ git clone https://github.com/vozlt/nginx-module-vts.git
 cd nginx-1.21.4
 ./configure --add-module=../nginx-module-vts --with-http_ssl_module --with-stream --with-http_v2_module
 make
-sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.backup
+cat /etc/nginx/nginx.conf # This is config is applyed when run nginx which install from apt
+sudo cp /usr/local/nginx/conf/nginx.conf /usr/local/nginx/conf/nginx.conf.backup
 sudo make install
 
 sudo nano /usr/local/nginx/conf/nginx.conf
