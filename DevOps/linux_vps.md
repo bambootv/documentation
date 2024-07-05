@@ -117,13 +117,12 @@ http {
 ```
 
 ```
-Grafana
-
-nginx -v
+Add module nginx-module-vts to config with grafana
 
 sudo apt-get update
 sudo apt-get install build-essential libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-dev
 
+nginx -v
 wget http://nginx.org/download/nginx-1.21.4.tar.gz
 tar -xzvf nginx-1.21.4.tar.gz
 git clone https://github.com/vozlt/nginx-module-vts.git
@@ -131,7 +130,6 @@ git clone https://github.com/vozlt/nginx-module-vts.git
 cd nginx-1.21.4
 ./configure --add-module=../nginx-module-vts --with-http_ssl_module --with-stream --with-http_v2_module
 make
-
 sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.backup
 sudo make install
 
@@ -144,22 +142,23 @@ http {
     listen 80;
 
     location /status {
-      vhost_traffic_status_display;
-      vhost_traffic_status_display_format prometheus;
+       vhost_traffic_status_display;
+       vhost_traffic_status_display_format prometheus;
+      }
     }
-  }
+
+    log_format metrics '$remote_addr - $remote_user [$time_local] '
+                        '"$request" $status $body_bytes_sent '
+                        '"$http_referer" "$http_user_agent" '
+                        '$request_time';
 }
-
-sudo systemctl restart nginx
-
-/usr/local/nginx/sbin/nginx -V 2>&1 | grep --color -o vts
-
-http://<NGINX_IP>/status
 
 sudo systemctl stop nginx
 sudo touch /usr/local/nginx/logs/nginx.pid
 sudo /usr/local/nginx/sbin/nginx
-
+sudo /usr/local/nginx/sbin/nginx -s reload
+http://<NGINX_IP>/status
+/usr/local/nginx/sbin/nginx -V 2>&1 | grep --color -o vts
 
 ```
 
