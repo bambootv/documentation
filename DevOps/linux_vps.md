@@ -116,6 +116,53 @@ http {
 }
 ```
 
+```
+Grafana
+
+nginx -v
+
+sudo apt-get update
+sudo apt-get install build-essential libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-dev
+
+wget http://nginx.org/download/nginx-1.21.4.tar.gz
+tar -xzvf nginx-1.21.4.tar.gz
+git clone https://github.com/vozlt/nginx-module-vts.git
+
+cd nginx-1.21.4
+./configure --add-module=../nginx-module-vts --with-http_ssl_module --with-stream --with-http_v2_module
+make
+
+sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.backup
+sudo make install
+
+sudo nano /usr/local/nginx/conf/nginx.conf
+
+http {
+  vhost_traffic_status_zone;
+
+  server {
+    listen 80;
+
+    location /status {
+      vhost_traffic_status_display;
+      vhost_traffic_status_display_format prometheus;
+    }
+  }
+}
+
+sudo systemctl restart nginx
+
+/usr/local/nginx/sbin/nginx -V 2>&1 | grep --color -o vts
+
+http://<NGINX_IP>/status
+
+sudo systemctl stop nginx
+sudo touch /usr/local/nginx/logs/nginx.pid
+sudo /usr/local/nginx/sbin/nginx
+
+
+```
+
 3. ufw
 ```
 sudo nano /etc/default/ufw
