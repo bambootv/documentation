@@ -163,5 +163,6 @@ sudo ntfsfix /dev/nvme0n1p7
 
 17. Monitoring
 ```
-sudo ss -lptn 'sport = :80'
+sudo ss -tulpn | grep :80
+sudo kill -QUIT 882397
 ```
