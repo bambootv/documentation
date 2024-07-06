@@ -163,6 +163,22 @@ http://<NGINX_IP>/status
 
 ```
 
+```
+./configure --with-http_stub_status_module
+
+	log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+        location /nginx_status {
+            stub_status;
+            allow 127.0.0.1;
+            deny all;
+        }
+	
+
+```
+
 3. ufw
 ```
 sudo nano /etc/default/ufw
