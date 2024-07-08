@@ -185,10 +185,12 @@ sudo apt remove telegraf
 sudo apt install telegraf
 
 sudo systemctl start telegraf
-sudo systemctl status telegraf
-sudo journalctl -u telegraf -n 50
+sudo journalctl -u telegraf -n 30
+
 sudo systemctl daemon-reload
 sudo systemctl restart telegraf
+sudo systemctl status telegraf
+
 sudo telegraf --config /etc/telegraf/telegraf.conf --test
 
 
@@ -242,7 +244,6 @@ sudo nano /etc/telegraf/telegraf.conf
   percpu = true
 [[inputs.disk]]
 [[inputs.diskio]]
-[[inputs.io]]
 [[inputs.net]]
 [[inputs.mem]]
 [[inputs.system]]
@@ -279,6 +280,12 @@ USE telegraf;
 SHOW MEASUREMENTS;
 SELECT * FROM cpu LIMIT 10;
 
+```
+
+```
+sudo systemctl unmask telegraf.service
+sudo systemctl daemon-reload
+sudo systemctl restart telegraf.service
 ```
 
 
