@@ -209,6 +209,21 @@ WantedBy=multi-user.target
 
 
 sudo nano /etc/telegraf/telegraf.conf
+[global_tags]
+
+[agent]
+  interval = "10s"
+  round_interval = true
+  metric_batch_size = 1000
+  metric_buffer_limit = 10000
+  collection_jitter = "0s"
+  flush_interval = "10s"
+  flush_jitter = "0s"
+  precision = ""
+  debug = false
+  quiet = false
+  logfile = "/var/log/telegraf/telegraf.log"
+
 ###############################################################################
 #                                  INPUTS                                     #
 ###############################################################################
@@ -237,12 +252,16 @@ sudo nano /etc/telegraf/telegraf.conf
 #                                  OUTPUTS                                    #
 ###############################################################################
 
+[[outputs.prometheus_client]]
+  listen = ":9273"
+  path = "/metrics"
+
 # Configuration for sending metrics to InfluxDB
-[[outputs.influxdb]]
-  urls = ["http://localhost:8086"]
-  database = "telegraf"
-  username = "user_123"
-  password = "password_123"
+#[[outputs.influxdb]]
+# urls = ["http://localhost:8086"]
+# database = "telegraf"
+# username = "user_123"
+# password = "password_123"
 
 # Uncomment to send metrics directly to Grafana Loki
 # [[outputs.loki]]
@@ -254,13 +273,24 @@ sudo nano /etc/telegraf/telegraf.conf
 
 
 
-  logfile = "/var/log/telegraf/telegraf.log"
-
 
 influx
 USE telegraf;
 SHOW MEASUREMENTS;
 SELECT * FROM cpu LIMIT 10;
+
+```
+
+
+```
+prothemius
+nano /etc/prometheus/prometheus.yml
+scrape_configs:
+  - job_name: 'telegraf'
+    static_configs:
+      - targets: ['telegraf-hostname:9273']
+
+sudo systemctl restart prometheus
 
 ```
 
