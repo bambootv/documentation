@@ -176,8 +176,95 @@ http://<NGINX_IP>/status
             deny all;
         }
 	
+```
+
 
 ```
+sudo nano /etc/telegraf/telegraf.conf
+sudo apt remove telegraf
+sudo apt install telegraf
+
+sudo systemctl start telegraf
+sudo systemctl status telegraf
+sudo journalctl -u telegraf -n 50
+sudo systemctl daemon-reload
+sudo systemctl restart telegraf
+sudo telegraf --config /etc/telegraf/telegraf.conf --test
+
+
+sudo nano /etc/systemd/system/telegraf.service
+
+[Unit]
+Description=The plugin-driven server agent for reporting metrics into InfluxDB
+Documentation=https://github.com/influxdata/telegraf
+After=network.target
+
+[Service]
+User=telegraf
+ExecStart=/usr/bin/telegraf -config /etc/telegraf/telegraf.conf -config-directory /etc/telegraf/telegraf.d
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
+
+sudo nano /etc/telegraf/telegraf.conf
+###############################################################################
+#                                  INPUTS                                     #
+###############################################################################
+
+[[inputs.nginx]]
+   urls = ["http://localhost/nginx_status"]
+   response_timeout = "5s"
+[[inputs.tail]]
+  name_override = "nginxlog"
+  files = ["/var/log/nginx/access.log"]
+  from_beginning = true
+  pipe = false
+  data_format = "grok"
+  grok_patterns = ["%{COMBINED_LOG_FORMAT}"]
+[[inputs.cpu]]
+  percpu = true
+[[inputs.disk]]
+[[inputs.diskio]]
+[[inputs.io]]
+[[inputs.net]]
+[[inputs.mem]]
+[[inputs.system]]
+
+
+###############################################################################
+#                                  OUTPUTS                                    #
+###############################################################################
+
+# Configuration for sending metrics to InfluxDB
+[[outputs.influxdb]]
+  urls = ["http://localhost:8086"]
+  database = "telegraf"
+  username = "user_123"
+  password = "password_123"
+
+# Uncomment to send metrics directly to Grafana Loki
+# [[outputs.loki]]
+#   urls = ["http://localhost:3100/loki/api/v1/push"]
+
+# Configuration for sending metrics to Prometheus
+# [[outputs.prometheus_client]]
+#   listen = ":9273"
+
+
+
+  logfile = "/var/log/telegraf/telegraf.log"
+
+
+influx
+USE telegraf;
+SHOW MEASUREMENTS;
+SELECT * FROM cpu LIMIT 10;
+
+```
+
+
 
 3. ufw
 ```
