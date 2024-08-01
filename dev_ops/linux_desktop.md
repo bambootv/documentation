@@ -23,6 +23,28 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 ```
 nano ~/.zshrc
 plugins=(git zsh-autosuggestions)
+
+export PATH=/opt/homebrew/bin:$PATH
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#e6f2ff"
+
+prompt_dir() {
+	prompt_segment blue $CURRENT_FG '%c'
+}
+
+build_prompt () {
+	RETVAL=$?
+	prompt_status
+	prompt_virtualenv
+	prompt_aws
+#	prompt_context
+	prompt_dir
+	prompt_git
+	prompt_bzr
+	prompt_hg
+	prompt_end
+}
+
 ```
 
 3. Ibus
