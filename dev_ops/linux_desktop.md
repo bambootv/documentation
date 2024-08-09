@@ -166,25 +166,20 @@ ip route
 # Can buy static ip from provider
 ```
 
-14. Check size
-```
-tree --du -h
-du -sh ./*
-```
-
-15. Redis
+14. Redis
 ```
 redis-cli
 > AUTH YourPasswordHere
 ```
 
-16. Error mounting
+15. Error mounting
 ```
 sudo ntfsfix /dev/nvme0n1p7
 ```
 
-17. Monitoring
+16. Monitoring
 ```
 sudo ss -tulpn | grep :80
 sudo kill -QUIT 882397
+du -h / -ah
 ```
