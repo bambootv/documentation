@@ -7,6 +7,7 @@ ls -l ~/.ssh/id*
 mkdir ~/.ssh
 chmod 700 ~/.ssh
 ssh-keygen
+ssh-keygen -b 4096 -t rsa
    /home/<username>/.ssh/id_rsa_<server_name>
 ls -l ~/.ssh/
 cat /home/<username>/.ssh/id_rsa_<server_name>.pub
