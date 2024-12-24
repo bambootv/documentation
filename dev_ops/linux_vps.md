@@ -65,6 +65,14 @@ server {
     }
 }
 ```
+```
+sudo apt-get install apache2-utils
+sudo htpasswd -c /etc/nginx/.htpasswd username
+location /protected {
+    auth_basic "Restricted Area"; # Message displayed in the auth prompt
+    auth_basic_user_file /etc/nginx/.htpasswd; # Path to the password file
+}
+```
 
 ```
 /etc/nginx/nginx.conf
